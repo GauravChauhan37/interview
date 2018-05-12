@@ -15,6 +15,7 @@ public class anagramSubstringSearch {
 		for (int i = 0; i < pat.length(); i++) {
 			originalCount[pat.charAt(i) - 'a']++;
 		}
+		
 		int[] varCount = originalCount.clone();
 		int i = 0;
 		int j = i;
