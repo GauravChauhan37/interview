@@ -23,6 +23,7 @@ public class checkIfTwoStringsArekAnagramOrNot {
 				countOfss[s.charAt(p) - 'a']--;
 			}
 		}
+		
 		int count1 = 0;
 		int count2 = 0;
 		for (int i = 0; i < countOfs.length; i++) {
@@ -33,10 +34,19 @@ public class checkIfTwoStringsArekAnagramOrNot {
 				count2++;
 			}
 		}
-		if (Math.abs(count1 - count2) <= k) {
-			return true;
+		if (count1 == count2) {
+			if (count1 <= k) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			if (Math.abs(count1 - count2) <= k) {
+				return true;
+			} else {
+				return false;
+			}
 		}
-		return false;
 	}
 
 	public static void main(String[] args) {

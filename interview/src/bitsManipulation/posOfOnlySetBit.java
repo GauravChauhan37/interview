@@ -23,12 +23,11 @@ public class posOfOnlySetBit {
 		int index = 0;
 		while (true) {
 			if ((n & 1) == 1) {
-				System.out.println(index);
+				System.out.println(index+1);
 				return;
-			} else {
-				index++;
-				n = n >> 1;
 			}
+			index++;
+			n = n >> 1;
 		}
 	}
 

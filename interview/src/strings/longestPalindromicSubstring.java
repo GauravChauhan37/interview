@@ -3,39 +3,43 @@ package strings;
 import java.util.Scanner;
 
 public class longestPalindromicSubstring {
-	public static void longestPalinSubLeft(String s) {
-		int maxLength = 1;
-		int omax = 0;
+	public static String longestPalinSubOdd(String s) {
+		String maxString = "";
+		String maxStringSoFar = "";
 		for (int axis = 0; axis < s.length(); axis++) {
 			for (int lorbit = axis - 1, rorbit = axis + 1; lorbit >= 0
 					&& rorbit <= s.length() - 1; lorbit--, rorbit++) {
 				if (s.charAt(lorbit) == s.charAt(rorbit)) {
-					maxLength += 2;
-				}
-				if (omax < maxLength) {
-					omax = maxLength;
+
+					maxString = s.substring(lorbit, rorbit + 1);
+				} else {
+					break;
 				}
 			}
+			if (maxStringSoFar.length() < maxString.length()) {
+				maxStringSoFar = maxString;
+			}
 		}
-		System.out.println(omax);
-
+		return maxStringSoFar;
 	}
 
-	public static void longestPalinSubRight(String s) {
-		int maxLength = 0;
-		int omax = 0;
+	public static String longestPalinSubEven(String s) {
+		String maxString = "";
+		String maxStringSoFar = "";
 		for (double axis = 0.5; axis < s.length(); axis++) {
 			for (double lorbit = axis - 0.5, rorbit = axis + 0.5; lorbit >= 0
 					&& rorbit <= s.length() - 1; lorbit--, rorbit++) {
 				if (s.charAt((int) (lorbit)) == s.charAt((int) (rorbit))) {
-					maxLength += 2;
-				}
-				if (omax < maxLength) {
-					omax = maxLength;
+					maxString = s.substring((int) (lorbit), (int) (rorbit + 1));
+				} else {
+					break;
 				}
 			}
+			if (maxStringSoFar.length() < maxString.length()) {
+				maxStringSoFar = maxString;
+			}
 		}
-		System.out.println(omax);
+		return maxStringSoFar;
 
 	}
 
@@ -43,10 +47,13 @@ public class longestPalindromicSubstring {
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();
 		sc.close();
-		if (s.length() % 2 != 0) {
-			longestPalinSubLeft(s);
+
+		String odd = longestPalinSubOdd(s);
+		String even = longestPalinSubEven(s);
+		if (odd.length() > even.length()) {
+			System.out.println(odd);
 		} else {
-			longestPalinSubRight(s);
+			System.out.println(even);
 		}
 	}
 }

@@ -13,18 +13,20 @@ public class anagramSubstringSearch {
 		sc.close();
 		int[] originalCount = new int[26];
 		for (int i = 0; i < pat.length(); i++) {
-			originalCount[pat.charAt(i) - 'a']++;
+			char ch = pat.charAt(i);
+			originalCount[ch - 'A']++;
 		}
-		
+
 		int[] varCount = originalCount.clone();
 		int i = 0;
 		int j = i;
 		while (j < s.length()) {
-			if (varCount[s.charAt(j) - 'a'] != 0) {
-				varCount[s.charAt(j) - 'a']--;
+			char ch =(char)(s.charAt(j) - 'A');
+			if (varCount[ch] != 0) {
+				varCount[s.charAt(j) - 'A']--;
 			}
 			if (Arrays.equals(new int[26], varCount)) {
-				System.out.println(i);
+				System.out.print(i+" ");
 				i++;
 				j = i - 1;
 				varCount = originalCount.clone();
