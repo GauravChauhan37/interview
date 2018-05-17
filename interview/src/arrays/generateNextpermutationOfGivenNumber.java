@@ -14,13 +14,29 @@ public class generateNextpermutationOfGivenNumber {
 			n = n / 10;
 		}
 		int i = arr.length - 1;
-		while (i >= 0) {
+		boolean flag = false;
+		while (i > 0) {
 			if (arr[i] < arr[i - 1]) {
 				i--;
+				flag = true;
 			} else {
 				i--;
-				break;
+				flag = false;
 			}
+		}
+		if (i == 0 && flag == true) {
+			// int j = arr.length - 1;
+			// while (i < j) {
+			// int temp = arr[i];
+			// arr[i] = arr[j];
+			// arr[j] = temp;
+			// i++;
+			// j--;
+			// }
+			for (int p = arr.length - 1; p >= 0; p--) {
+				System.out.print(arr[p]);
+			}
+			return;
 		}
 
 		int index = 0;
