@@ -13,12 +13,12 @@ public class jobSequencing {
 		}
 
 		Arrays.sort(jobs);
-		int k = 0;
+
 		Character[] ch = new Character[jobs.length];
 		for (int i = 0; i < jobs.length; i++) {
-			for (int j = i; j + 1 <= jobs[i].deadline; j--) {
+			for (int j = jobs[i].deadline - 1; j >= 0; j--) {
 				if (ch[j] == null) {
-					ch[k++] = jobs[j].JobID;
+					ch[j] = jobs[i].JobID;
 					break;
 				}
 			}
@@ -43,7 +43,7 @@ public class jobSequencing {
 		}
 
 		public int compareTo(Job o) {
-			return o.Profit - this.Profit;
+			return o.Profit - this.Profit; // decreasing
 		}
 
 	}

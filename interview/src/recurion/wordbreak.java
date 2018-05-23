@@ -7,14 +7,19 @@ public class wordbreak {
 	public static void wordBreak(HashSet<String> hs, String s, int idx, String ans, String prefix) {
 		if (idx == s.length()) {
 			if (prefix.isEmpty()) {
-				System.out.println(ans);
+				System.out.print("(" + ans + ")");
 			}
 			return;
 		}
+
 		if (idx < s.length()) {
 			char ch = s.charAt(idx);
 			if (hs.contains(prefix + ch)) {
-				wordBreak(hs, s, idx + 1, ans + prefix + ch+" ", "");
+				if (ans.length() == 0) {
+					wordBreak(hs, s, idx + 1, ans + prefix + ch, "");
+				} else {
+					wordBreak(hs, s, idx + 1, ans + " " + prefix + ch, "");
+				}
 				wordBreak(hs, s, idx + 1, ans, prefix + ch);
 			} else {
 				wordBreak(hs, s, idx + 1, ans, prefix + ch);
@@ -24,9 +29,11 @@ public class wordbreak {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String s = sc.nextLine();
-		String[] arr = { "mobile", "samsung", "sam", "sung", "man", "mango", "icecream", "and", "go", "i", "like",
-				"ice", "cream" };
+		String[] arr = new String[sc.nextInt()];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.next();
+		}
+		String s = sc.next();
 		HashSet<String> hs = new HashSet<>();
 		for (int i = 0; i < arr.length; i++) {
 			hs.add(arr[i]);
