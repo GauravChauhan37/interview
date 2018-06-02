@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class templeOffering {
-
+	// two arrays
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int[] arr = new int[sc.nextInt()];
