@@ -15,6 +15,7 @@ public class partitionKSubsets {
 		}
 		int k = sc.nextInt();
 		sc.close();
+		
 		ArrayList<Integer>[] subset = new ArrayList[k];
 		for (int i = 0; i < subset.length; i++) {
 			subset[i] = new ArrayList<>();

@@ -4,6 +4,13 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class findAllDistinctPalindromicSubstrings {
+	//Input: str = "abaaa"
+	//Output:  Below are 5 palindrome sub-strings
+	//a
+	//aa
+	//aaa
+	//aba
+	//b
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -41,7 +48,7 @@ public class findAllDistinctPalindromicSubstrings {
 	}
 
 	private static void findPalin(String s, HashMap<String, Integer> hp) {
-		int radix = 0;
+		int radix;
 		int left;
 		int right;
 		for (radix = 0; radix < s.length(); radix++) {
