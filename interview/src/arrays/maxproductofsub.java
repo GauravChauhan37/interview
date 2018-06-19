@@ -1,7 +1,6 @@
 package arrays;
 
 import java.util.Scanner;
-
 public class maxproductofsub {
 	private static void maxproduct(int[] arr) {
 		int currMin = 1;
@@ -13,6 +12,7 @@ public class maxproductofsub {
 				currMax = 1;
 				currMin = 1;
 			}
+			,++
 			int min = currMin;
 			currMin = Math.min(arr[i], Math.min(arr[i] * currMin, arr[i] * currMax));
 			currMax = Math.max(arr[i], Math.max(arr[i] * min, arr[i] * currMax));

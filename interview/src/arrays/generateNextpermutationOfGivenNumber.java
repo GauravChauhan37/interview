@@ -25,14 +25,6 @@ public class generateNextpermutationOfGivenNumber {
 			}
 		}
 		if (i == 0 && flag == true) {
-			// int j = arr.length - 1;
-			// while (i < j) {
-			// int temp = arr[i];
-			// arr[i] = arr[j];
-			// arr[j] = temp;
-			// i++;
-			// j--;
-			// }
 			for (int p = arr.length - 1; p >= 0; p--) {
 				System.out.print(arr[p]);
 			}
