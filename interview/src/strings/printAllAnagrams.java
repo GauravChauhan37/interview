@@ -48,9 +48,7 @@ public class printAllAnagrams {
 		}
 		Arrays.sort(words);
 		for (int i = 0; i < words.length; i++) {
-			System.out.print(arr[words[i].index] + " ");
+			System.out.println(arr[words[i].index]);
 		}
-		System.out.println();
 	}
-
 }

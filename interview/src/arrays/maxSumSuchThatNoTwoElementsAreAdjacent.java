@@ -12,7 +12,7 @@ public class maxSumSuchThatNoTwoElementsAreAdjacent {
 			incl = new_incl;
 			excl = new_excl;
 		}
-		System.out.println(incl);
+		System.out.println(Math.max(incl, excl));
 	}
 
 	public static void main(String[] args) {

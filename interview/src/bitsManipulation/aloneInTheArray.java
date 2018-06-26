@@ -26,7 +26,7 @@ public class aloneInTheArray {
 			uniSum += 3 * digit;
 		}
 		int ans = uniSum - sum;
-		ans /= 2;
+		ans /= 2;   // cz element is left twice as big as itself
 		System.out.println(ans);
 	}
 }

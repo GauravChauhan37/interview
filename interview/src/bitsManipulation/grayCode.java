@@ -11,7 +11,7 @@ public class grayCode {
 		for (String str : al) {
 			System.out.println(str);
 		}
-
+		scn.close();
 	}
 
 	private static ArrayList<String> solve(int n) {
@@ -34,7 +34,6 @@ public class grayCode {
 			else
 				str = '1' + str;
 			ans.add(str);
-
 		}
 
 		return ans;

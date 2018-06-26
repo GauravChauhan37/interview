@@ -35,8 +35,8 @@ public class searchAnElementWhoseAdjElementDiffByk {
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = sc.nextInt();
 		}
-		int k = sc.nextInt();
 		int x = sc.nextInt();
+		int k = sc.nextInt();
 		sc.close();
 		search(arr, k, x);
 	}

@@ -9,8 +9,8 @@ public class josephusProblem {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		Joseph(n);
+		sc.close();
 	}
-
 	public static void Joseph(int m) {
 		int count = 0;
 		int n = m;
@@ -22,14 +22,12 @@ public class josephusProblem {
 			System.out.println(1);
 		} else {
 			int x = 2;
-
 			while (x < m) {
 				x = x * 2;
 			}
 			x = x / 2; // power of 2 less that n
-
 			int diff = m - x;
-			int val = 2 * diff + 1;
+			int val = 2 * diff + 1; // 2* n + 1
 			System.out.println(val);
 		}
 	}

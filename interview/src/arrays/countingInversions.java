@@ -29,7 +29,7 @@ public class countingInversions {
 				sortedArr[k] = arr[j];
 				j++;
 				k++;
-				inversions = mid - i;
+				inversions = mid - i;  // if jth element is bigger 
 			}
 		}
 		if (i < mid) {

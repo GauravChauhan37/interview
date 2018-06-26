@@ -20,6 +20,7 @@ public class groupWordsWithSameSetOfCharacters {
 					sortedPattern += ch;
 				}
 			}
+			// if hashmap dont have that patt
 			if (hp.get(sortedPattern) == null) {
 				ArrayList<Integer> mapAl = new ArrayList<>();
 				mapAl.add(i);
@@ -30,15 +31,15 @@ public class groupWordsWithSameSetOfCharacters {
 				hp.put(sortedPattern, mapAl);
 			}
 		}
+		// display
 		ArrayList<String> al = new ArrayList<>(hp.keySet());
 		for (int i = 0; i < al.size(); i++) {
 			String s = al.get(i);
 			for (int p = 0; p < hp.get(s).size(); p++) {
-				System.out.println(arr[hp.get(s).get(p)]);
+				System.out.print(arr[hp.get(s).get(p)]+" ");
 			}
+			System.out.println();
 		}
-		System.out.println();
-
 	}
 
 	public static void main(String[] args) {

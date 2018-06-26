@@ -45,17 +45,19 @@ public class ceilingandfloor {
 		int element = sc.nextInt();
 		sc.close();
 		// two more base cases for floor
-		if (element > arr[arr.length - 1]) {
-			System.out.println(arr[arr.length - 1]);
-			return;
-		}
-		if (element < arr[0]) {
-			System.out.println("There is no floor");
-			return;
-		}
+//		if (element > arr[arr.length - 1]) {
+//			System.out.println(arr[arr.length - 1]);
+//			return;
+//		}
+//		if (element < arr[0]) {
+//			System.out.println("There is no floor");
+//			return;
+//		}
 		// System.out.println(findFloor(arr, element, 0, arr.length - 1));
+		
+		
 		// two more base cases for ceil
-		if (element < arr[0]) {
+		if (element <= arr[0]) {
 			System.out.println(arr[0]);
 			return;
 		}
