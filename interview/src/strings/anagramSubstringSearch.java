@@ -11,6 +11,7 @@ public class anagramSubstringSearch {
 		String s = sc.nextLine();
 		String pat = sc.nextLine();
 		sc.close();
+		
 		int[] originalCount = new int[26];
 		for (int i = 0; i < pat.length(); i++) {
 			char ch = pat.charAt(i);

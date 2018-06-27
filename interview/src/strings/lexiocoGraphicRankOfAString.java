@@ -12,7 +12,7 @@ public class lexiocoGraphicRankOfAString {
 		int total = 1;
 		int curr = 0;
 		HashMap<Character, Integer> freq = new HashMap<>();
-		for (int i = 0; i < s.length(); i++) {
+		for (int i = 0; i < s.length(); i++) {  // freq map of chars 
 			if (freq.containsKey(s.charAt(i))) {
 				int val = freq.get(s.charAt(i));
 				val++;

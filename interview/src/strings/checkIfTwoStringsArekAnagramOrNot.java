@@ -9,21 +9,23 @@ public class checkIfTwoStringsArekAnagramOrNot {
 		}
 		int[] countOfs = new int[26];
 		int[] countOfss = new int[26];
-		for (int i = 0; i < s.length(); i++) {
+		for (int i = 0; i < s.length(); i++) { // make freq map
 			countOfs[s.charAt(i) - 'a']++;
 			countOfss[ss.charAt(i) - 'a']++;
 		}
-		for (int p = 0; p < ss.length(); p++) {
+		for (int p = 0; p < ss.length(); p++) { // loop 2nd string and decrement
+												// first map
 			if (countOfs[ss.charAt(p) - 'a'] != 0) {
 				countOfs[ss.charAt(p) - 'a']--;
 			}
 		}
-		for (int p = 0; p < s.length(); p++) {
+		for (int p = 0; p < s.length(); p++) { // loop 1st string and decrement
+												// scnd map
 			if (countOfss[s.charAt(p) - 'a'] != 0) {
 				countOfss[s.charAt(p) - 'a']--;
 			}
 		}
-		
+
 		int count1 = 0;
 		int count2 = 0;
 		for (int i = 0; i < countOfs.length; i++) {
@@ -34,7 +36,7 @@ public class checkIfTwoStringsArekAnagramOrNot {
 				count2++;
 			}
 		}
-		if (count1 == count2) {
+		if (count1 == count2) { 
 			if (count1 <= k) {
 				return true;
 			} else {
